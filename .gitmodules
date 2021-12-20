@@ -1,0 +1,3 @@
+[submodule "EntityCore"]
+	path = EntityCore
+	url = https://github.com/Calvin-Ruiz/EntityCore.git

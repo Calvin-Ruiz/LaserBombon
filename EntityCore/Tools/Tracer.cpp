@@ -19,7 +19,7 @@ void Tracer::emplace(Trace type, void *data, const std::string &name, trace_draw
 {
     interrupt = true;
     while (!interrupted)
-        std::this_thread::sleep_for(std::chrono::microseconds(400));
+        std::this_thread::sleep_for(std::chrono::milliseconds(2));
     tracing.push_back({handler, data, name, type});
     interrupt = false;
 }
@@ -28,7 +28,7 @@ void Tracer::erase(const std::string &name)
 {
     interrupt = true;
     while (!interrupted)
-        std::this_thread::sleep_for(std::chrono::microseconds(400));
+        std::this_thread::sleep_for(std::chrono::milliseconds(2));
 
     for (unsigned int i = 0; i < tracing.size(); ++i) {
         if (name == tracing[i].name) {
@@ -83,8 +83,8 @@ void Tracer::start()
 void Tracer::stop()
 {
     alive = false;
-    while (!interrupted)
-        std::this_thread::sleep_for(std::chrono::microseconds(400));
+    if (thread.joinable())
+        thread.join();
 }
 
 void Tracer::mainloop()
@@ -98,7 +98,7 @@ void Tracer::mainloop()
         while (interrupt) {
             interrupted = true;
             while (interrupt)
-                std::this_thread::sleep_for(std::chrono::microseconds(400));
+                std::this_thread::sleep_for(std::chrono::milliseconds(10));
             interrupted = false;
         }
         if (needRedraw) {
@@ -122,6 +122,7 @@ void Tracer::draw()
         insert(tracing[lastSize++]);
     }
     std::cout.write(reinterpret_cast<char *>(buffer), (long) (pbuffer - buffer));
+    std::cout.flush();
 }
 
 void Tracer::insert(TraceData &data)

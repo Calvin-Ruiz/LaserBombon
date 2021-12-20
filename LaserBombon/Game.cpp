@@ -8,7 +8,7 @@
 #include "EntityLib/Core/EntityLib.hpp"
 #include "EntityLib/Core/GPUDisplay.hpp"
 #include "EntityLib/Core/GPUEntityMgr.hpp"
-#include "EntityLib/Tools/Tracer.hpp"
+#include "EntityCore/Tools/Tracer.hpp"
 #include "Menu.hpp"
 #include <fstream>
 #include <cmath>
