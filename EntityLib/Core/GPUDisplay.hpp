@@ -95,10 +95,10 @@ public:
     char sep1 = '/';
     std::string sep2 = " - ";
     bool section2 = false;
-    long score1 = 0;
-    long score1Max = 0;
-    long score2 = 0;
-    long score2Max = 0;
+    int64_t score1 = 0;
+    int64_t score1Max = 0;
+    int64_t score2 = 0;
+    int64_t score2Max = 0;
     int level1 = 0;
     int level1Max = 0;
 

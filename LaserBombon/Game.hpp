@@ -242,10 +242,10 @@ public:
     void mainloop();
     void load(int slot, int playerCount = 2);
     bool openMenu(int type);
-    long getRecursionGain() const;
-    long getMaxedRecursionGain() const;
+    int64_t getRecursionGain() const;
+    int64_t getMaxedRecursionGain() const;
     void makeRecursion();
-    long getScoreAfterRecursion() const;
+    int64_t getScoreAfterRecursion() const;
 private:
     void save();
     void gameStart();

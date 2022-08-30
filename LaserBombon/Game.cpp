@@ -1051,7 +1051,7 @@ bool Game::openMenu(int type)
     return ret;
 }
 
-long Game::getRecursionGain() const
+int64_t Game::getRecursionGain() const
 {
     switch (nbPlayer) {
         case 1:
@@ -1066,7 +1066,7 @@ long Game::getRecursionGain() const
     }
 }
 
-long Game::getMaxedRecursionGain() const
+int64_t Game::getMaxedRecursionGain() const
 {
     switch (nbPlayer) {
         case 1:
@@ -1114,7 +1114,7 @@ void Game::makeRecursion()
     }
 }
 
-long Game::getScoreAfterRecursion() const
+int64_t Game::getScoreAfterRecursion() const
 {
     return (recursion + getRecursionGain()) * recursionBaseScoreRatio;
 }

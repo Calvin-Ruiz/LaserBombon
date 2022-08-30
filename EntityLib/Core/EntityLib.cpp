@@ -153,7 +153,7 @@ void EntityLib::setFragmentPos(EntityData &entity, int x, int y)
     entity.posY = y * worldScaleY - 1;
 }
 
-std::string EntityLib::toText(long nbr)
+std::string EntityLib::toText(int64_t nbr)
 {
     std::string str;
 

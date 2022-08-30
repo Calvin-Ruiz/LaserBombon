@@ -1,3 +1,5 @@
 build
 LaserBombon/LaserBombon
 *.dat
+bin
+.vs

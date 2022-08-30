@@ -328,7 +328,7 @@ void GPUDisplay::initCommands()
         tmpSync2.placeBarrier(cmd);
         BufferMgr::copy(cmd, jaugeStaging, jaugeVertexBuffer->get());
         tmpSync.placeBarrier(cmd);
-        scoreboard->use(cmd);
+        scoreboard->use(cmd, false);
         renderMgr.begin(i, cmd);
         imagePipeline->bind(cmd);
         VertexArray::bind(cmd, imageVertexBuffer->get());

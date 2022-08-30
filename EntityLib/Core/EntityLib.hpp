@@ -48,7 +48,7 @@ public:
     const float worldScaleX;
     const float worldScaleY;
 
-    static std::string toText(long nbr);
+    static std::string toText(int64_t nbr);
     VkQueue graphicQueue;
     const struct QueueFamily *graphicQueueFamily;
 private:
